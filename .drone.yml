@@ -11,10 +11,11 @@ pipeline:
       - go test -cover -coverprofile=coverage.out
       - go build -ldflags "-s -w -X main.build=$DRONE_BUILD_NUMBER" -a -tags netgo
 
-  latest:
-    image: docker
-    repo: ypcloud/sonar-runner
-    tags: [ "latest", "1.0", "1" ]
+  build:
+    image: plugins/docker
+    repo: claimcompass/sonar-runner
+    secrets: [ docker_username, docker_password ]
+    auto_tag: true
     when:
-      branch: master
-      event: push
+      event: [ tag, push ]
+      branch: [ master, hotfix/* ]
