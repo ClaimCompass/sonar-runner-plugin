@@ -96,7 +96,7 @@ func main() {
 			Name:   "profile",
 			Usage:  "Project profile",
 			EnvVar: "PLUGIN_PROFILE",
-			Value:  "node",
+			Value:  "Sonar way",
 		},
 		cli.StringFlag{
 			Name:   "encoding",
