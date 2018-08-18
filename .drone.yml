@@ -1,5 +1,5 @@
 workspace:
-  path: /go/src/github.com/ypcloud/sonar-runner-plugin
+  path: /go/src/github.com/ClaimCompass/sonar-runner-plugin
 
 pipeline:
   test:
@@ -7,7 +7,6 @@ pipeline:
     environment:
       - CGO_ENABLED=0
     commands:
-      - go get ./
       - go vet
       - go test -cover -coverprofile=coverage.out
       - go build -ldflags "-s -w -X main.build=$DRONE_BUILD_NUMBER" -a -tags netgo
