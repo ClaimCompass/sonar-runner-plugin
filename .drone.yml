@@ -1,5 +1,6 @@
 workspace:
-  path: /go/src/github.com/ClaimCompass/sonar-runner-plugin
+  base: /go
+  path: src/github.com/ClaimCompass/sonar-runner-plugin
 
 pipeline:
   test:
